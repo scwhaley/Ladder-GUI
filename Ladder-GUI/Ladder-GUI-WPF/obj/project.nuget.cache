@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "L+X1cjNfYd8/viebHKdOscTbHZAL5U8/M8slEwzBqJ/ZloC+8jywkCj9CEnZYNlTZXvUmxKhTOqmY9vfv/mSmw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Spencer\\source\\repos\\scwhaley\\Ladder-GUI\\Ladder-GUI\\Ladder-GUI-WPF\\Ladder-GUI-WPF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Spencer\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
