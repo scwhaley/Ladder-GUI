@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ladder_GUI_WPF
 {
-    class BaseInstructionViewModel : INotifyPropertyChanged
+    abstract class BaseInstructionViewModel : INotifyPropertyChanged
     {
         private bool _enabled;
         public bool Enabled {get => _enabled;
