@@ -17,10 +17,6 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
@@ -32,7 +28,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
+            <VirtualizingStackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical"/>
         </Grid>
     </DockPanel>
-
 </Window>
