@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:Ladder_GUI_WPF"
         mc:Ignorable="d"
         Title="Ladder GUI" Height="450" Width="800">
-    <DockPanel>
+    <DockPanel Background="{Binding }">
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button Command="New" Content="New" />
+                <Button Content="Add Routine" Click="{Binding }" />
                 <Button Command="Open" Content="Open" />
                 <Button Command="Save" Content="Save" />
             </ToolBar>
@@ -22,13 +22,11 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
+                <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-            <VirtualizingStackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical"/>
+            <VirtualizingStackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal"/>
         </Grid>
     </DockPanel>
 </Window>
