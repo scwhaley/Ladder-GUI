@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Ladder_GUI_WPF
 {
-    class RungViewModel : INotifyPropertyChanged, INotifyCollectionChanged
+    class RungViewModel : BaseViewModel
     {
         #region Properties
         private int _rungNunmber;
@@ -15,15 +15,11 @@ namespace Ladder_GUI_WPF
                     return;
 
                 _rungNunmber = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(RungNumber)));
+                OnPropertyChanged();
             }
         }
         private ObservableCollection<IBaseInstructionModel> RungInstructions { get; set; } = new ObservableCollection<IBaseInstructionModel>();
         #endregion Properties
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         public void addInstruction(int index, IBaseInstructionModel instruction)
         {

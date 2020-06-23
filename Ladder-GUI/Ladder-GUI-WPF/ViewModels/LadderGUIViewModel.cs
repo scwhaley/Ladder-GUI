@@ -7,18 +7,20 @@ using System.Windows;
 
 namespace Ladder_GUI_WPF
 {
-    class LadderGUIViewModel : INotifyCollectionChanged, INotifyPropertyChanged
+    class LadderGUIViewModel : BaseViewModel
     {
         #region Properties
         private RoutineViewModel _loadedRoutine;
-        public RoutineViewModel LoadedRoutine { get => _loadedRoutine;
+        public RoutineViewModel LoadedRoutine
+        {
+            get => _loadedRoutine;
             set
             {
                 if (_loadedRoutine == value)
                     return;
 
                 _loadedRoutine = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(LoadedRoutine)));
+                OnPropertyChanged();
             }
         }
 
@@ -32,24 +34,19 @@ namespace Ladder_GUI_WPF
                     return;
 
                 _backgroundColor = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(LoadedRoutine)));
+                OnPropertyChanged();
             }
         }
+        #endregion Properties
 
         public LadderGUIViewModel()
         {
             BackgroundColor = "LightBlue";
         }
 
-
-        #endregion Properties
-
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public void LoadRoutine_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
     }
 }

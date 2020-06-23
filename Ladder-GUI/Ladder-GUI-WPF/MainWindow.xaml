@@ -9,9 +9,7 @@
     <DockPanel Background="{Binding }">
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button Content="Add Routine" Click="{Binding }" />
-                <Button Command="Open" Content="Open" />
-                <Button Command="Save" Content="Save" />
+
             </ToolBar>
         </ToolBarTray>
         <Grid>

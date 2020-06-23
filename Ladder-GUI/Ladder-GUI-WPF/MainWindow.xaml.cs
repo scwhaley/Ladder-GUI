@@ -23,7 +23,7 @@ namespace Ladder_GUI_WPF
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new LadderGUIViewModel();
+            DataContext = new LadderGUIViewModel();
         }
     }
 }

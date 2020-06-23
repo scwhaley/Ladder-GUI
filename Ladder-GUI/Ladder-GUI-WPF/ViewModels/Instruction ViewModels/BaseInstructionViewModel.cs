@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ladder_GUI_WPF
 {
-    abstract class BaseInstructionViewModel : INotifyPropertyChanged
+    abstract class BaseInstructionViewModel : BaseViewModel
     {
         private bool _enabled;
         public bool Enabled {get => _enabled;
@@ -15,14 +15,11 @@ namespace Ladder_GUI_WPF
                     return;
   
                 _enabled = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(Enabled)));
+                OnPropertyChanged();
             }
         }
         public string LongName { get; }
         public string ASCIIName { get; }
         public bool IsOutput { get; }
-
-        // TODO: Check whether i need to explicitly do : public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Ladder_GUI_WPF
 {
-    class RoutineViewModel: INotifyPropertyChanged, INotifyCollectionChanged
+    class RoutineViewModel : BaseViewModel
     {
         private int _numberOfRungs;
         public int NumberOfRungs { get => _numberOfRungs;
@@ -13,10 +13,8 @@ namespace Ladder_GUI_WPF
                     return;
 
                 _numberOfRungs = value;
+                OnPropertyChanged()
             } 
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
     }
 }
