@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.Specialized;
+using System.IO;
 
 namespace Ladder_GUI_WPF
 {
@@ -17,7 +15,9 @@ namespace Ladder_GUI_WPF
         // The calling member's name will be used as the parameter.
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
+            File.AppendAllText(@"C:\Temp\Debug.txt", $"Entered OnPropertyChanged method from {name}");
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
         }
     }
 }

@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:Ladder_GUI_WPF"
         mc:Ignorable="d"
         Title="Ladder GUI" Height="450" Width="800">
-    <DockPanel Background="{Binding }">
+    <DockPanel Background="{Binding BackgroundColor}">
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-
+                <Button Name="AddRoutineButton" Content="{Binding Path=BackgroundColor}" Command="{Binding LoadProgramCommand}" />
             </ToolBar>
         </ToolBarTray>
         <Grid>

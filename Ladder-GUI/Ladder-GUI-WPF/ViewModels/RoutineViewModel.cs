@@ -13,7 +13,7 @@ namespace Ladder_GUI_WPF
                     return;
 
                 _numberOfRungs = value;
-                OnPropertyChanged()
+                OnPropertyChanged();
             } 
         }
     }
