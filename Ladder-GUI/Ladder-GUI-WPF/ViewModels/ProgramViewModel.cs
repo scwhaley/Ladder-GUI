@@ -22,5 +22,15 @@ namespace Ladder_GUI_WPF
         {
             _routineList.Add(new RoutineViewModel());
         }
+
+        public void DeleteRoutine(int index)
+        {
+            _routineList.RemoveAt(index);
+        }
+
+        public void LoadProgram()
+        {
+
+        }
     }
 }

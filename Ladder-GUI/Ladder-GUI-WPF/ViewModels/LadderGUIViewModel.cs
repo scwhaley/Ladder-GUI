@@ -14,16 +14,16 @@ namespace Ladder_GUI_WPF
     {
         public ICommand LoadProgramCommand { get; set; }
         #region Properties
-        private RoutineViewModel _loadedRoutine;
-        public RoutineViewModel LoadedRoutine
+        private ProgramViewModel _loadedProgram;
+        public ProgramViewModel LoadedProgram
         {
-            get => _loadedRoutine;
+            get => _loadedProgram;
             set
             {
-                if (_loadedRoutine == value)
+                if (_loadedProgram == value)
                     return;
 
-                _loadedRoutine = value;
+                _loadedProgram = value;
                 OnPropertyChanged();
             }
         }
