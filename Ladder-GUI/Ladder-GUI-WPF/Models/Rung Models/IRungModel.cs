@@ -7,7 +7,6 @@ namespace Ladder_GUI_WPF
     interface IRungModel
     {
         public bool Enabled { get; set; }
-
-        public 
+        public RungInstructionsLinkedList LinkedListOfInstructions { get; set; }
     }
 }
