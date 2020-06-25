@@ -12,7 +12,10 @@ namespace Ladder_GUI_WPF
 {
     class LadderGUIViewModel : BaseViewModel
     {
+        #region Commands
         public ICommand LoadProgramCommand { get; set; }
+
+        #endregion Commands
         #region Properties
         private ProgramViewModel _loadedProgram;
         public ProgramViewModel LoadedProgram
@@ -27,6 +30,7 @@ namespace Ladder_GUI_WPF
                 OnPropertyChanged();
             }
         }
+
 
         private string _backgroundColor;
         public string BackgroundColor
@@ -47,6 +51,12 @@ namespace Ladder_GUI_WPF
         {
             BackgroundColor = "LightBlue";
             this.LoadProgramCommand = new RelayCommand(LoadProgram);
+            LoadedProgram = new ProgramViewModel();
+        }
+
+        private void CreateNewProgram()
+        {
+            LoadedProgram = new ProgramViewModel();
         }
 
         private void LoadProgram()
@@ -56,6 +66,8 @@ namespace Ladder_GUI_WPF
                 BackgroundColor = "LightGreen";
             else
                 BackgroundColor = "LightBlue";
+
+
         }
     }
 }

@@ -17,3 +17,7 @@ C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.dll
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.pdb
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.genruntimeconfig.cache
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\RungView.g.cs
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\XICView.g.cs
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\RungView.baml
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\XICView.baml

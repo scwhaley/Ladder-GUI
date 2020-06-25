@@ -9,7 +9,7 @@
     <DockPanel Background="{Binding BackgroundColor}">
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button Name="AddRoutineButton" Content="{Binding Path=BackgroundColor}" Command="{Binding LoadProgramCommand}" />
+                <Button Name="AddRoutineButton" Content="{Binding Path=BackgroundColor}" Command="{Binding LoadedProgram.AddRoutineCommand}" />
             </ToolBar>
         </ToolBarTray>
         <Grid Name="TestGridName">
@@ -24,8 +24,11 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-
-            <VirtualizingStackPanel Name="TestStackPanelName" Grid.Column="1" Grid.Row="1" Orientation="Horizontal"/>
+            
+            <TextBlock Text="{Binding LoadedProgram.RoutineCount}" Grid.Column="1" Grid.Row="1" />
+            <TextBlock Text="Blank" Grid.Column="1" Grid.Row="2" />
+            
+            <VirtualizingStackPanel Name="TestStackPanelName" Grid.Column="1" Grid.Row="3" Orientation="Horizontal"/>
         </Grid>
     </DockPanel>
 </Window>

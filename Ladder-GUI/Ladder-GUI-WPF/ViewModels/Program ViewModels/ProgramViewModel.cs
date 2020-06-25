@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 
 namespace Ladder_GUI_WPF
 {
     class ProgramViewModel : BaseViewModel
     {
-        private List<RoutineViewModel> _routineList;
-        public List<RoutineViewModel> RoutineList { get => _routineList;
+        #region Commands
+        public ICommand AddRoutineCommand { get; set; }
+        #endregion Commands
+
+        private ObservableCollection<RoutineViewModel> _routineList;
+        public ObservableCollection<RoutineViewModel> RoutineList { get => _routineList;
             set
             {
                 if (_routineList == value)
@@ -18,19 +24,30 @@ namespace Ladder_GUI_WPF
             }        
         }
 
-        public void AddRoutine()
+        private int _routineCount;
+        public int RoutineCount
         {
-            _routineList.Add(new RoutineViewModel());
+            get
+            {
+                RoutineList.Count;
+                OnPropertyChanged();
+            }
+        }
+
+        public ProgramViewModel()
+        {
+            RoutineList = new ObservableCollection<RoutineViewModel>();
+            this.AddRoutineCommand = new RelayCommand(AddRoutine);
+        }
+
+        private void AddRoutine()
+        {
+            RoutineList.Add(new RoutineViewModel());
         }
 
         public void DeleteRoutine(int index)
         {
-            _routineList.RemoveAt(index);
-        }
-
-        public void LoadProgram()
-        {
-
+            RoutineList.RemoveAt(index);
         }
     }
 }
