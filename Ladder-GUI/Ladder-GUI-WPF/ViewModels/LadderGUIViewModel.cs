@@ -57,6 +57,5 @@ namespace Ladder_GUI_WPF
             else
                 BackgroundColor = "LightBlue";
         }
-
     }
 }

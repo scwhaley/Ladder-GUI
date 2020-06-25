@@ -12,7 +12,7 @@
                 <Button Name="AddRoutineButton" Content="{Binding Path=BackgroundColor}" Command="{Binding LoadProgramCommand}" />
             </ToolBar>
         </ToolBarTray>
-        <Grid>
+        <Grid Name="TestGridName">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20" />
                 <ColumnDefinition Width="*" />
@@ -24,7 +24,8 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-            <VirtualizingStackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal"/>
+
+            <VirtualizingStackPanel Name="TestStackPanelName" Grid.Column="1" Grid.Row="1" Orientation="Horizontal"/>
         </Grid>
     </DockPanel>
 </Window>
