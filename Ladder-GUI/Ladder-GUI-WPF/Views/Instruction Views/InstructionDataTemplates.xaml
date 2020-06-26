@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Ladder_GUI_WPF">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <DataTemplate x:Key="XICDataTemplate">
         <TextBlock Text="{Binding ASCIIName}" />
@@ -9,5 +8,18 @@
     <DataTemplate x:Key="TestTemplate">
         <TextBlock Text="{Binding NumberOfRungs}" />
     </DataTemplate>
+
+    <Style x:Key="TestStyle" TargetType="ItemsControl">
+        <Setter>
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+
+
 
 </ResourceDictionary>

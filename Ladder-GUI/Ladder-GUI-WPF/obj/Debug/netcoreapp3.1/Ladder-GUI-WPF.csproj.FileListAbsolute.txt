@@ -20,3 +20,4 @@ C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\Instruction Views\XICView.g.cs
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\Instruction Views\InstructionDataTemplates.baml
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\Instruction Views\XICView.baml
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\App.baml

@@ -25,17 +25,7 @@
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1" >
-                <ItemsControl ItemsSource="{Binding LoadedProgram.RoutineList}" >
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Vertical" />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding NumberOfRungs}" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
+                <ItemsControl ItemsSource="{Binding LoadedProgram.RoutineList}" ItemTemplate="{StaticResource TestTemplate}" Style="{Binding TestStyle}">
                 </ItemsControl>
             </ScrollViewer>
         </Grid>
