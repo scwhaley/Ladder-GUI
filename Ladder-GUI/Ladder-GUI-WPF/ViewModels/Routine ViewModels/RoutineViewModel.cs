@@ -1,12 +1,16 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
 using System.ComponentModel;
 
 namespace Ladder_GUI_WPF
 {
     class RoutineViewModel : BaseViewModel
     {
+
         private int _numberOfRungs;
-        public int NumberOfRungs { get => _numberOfRungs;
+        public int NumberOfRungs
+        {
+            get => _numberOfRungs;
             set
             {
                 if (_numberOfRungs == value)
@@ -14,7 +18,13 @@ namespace Ladder_GUI_WPF
 
                 _numberOfRungs = value;
                 OnPropertyChanged();
-            } 
+            }
+        }
+
+        public RoutineViewModel()
+        {
+            Random randNumGenerator = new Random();
+            NumberOfRungs = randNumGenerator.Next();
         }
     }
 }

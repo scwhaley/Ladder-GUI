@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\App.xaml
-3-1957544651
+3-1242495970
 
-24-1618193002
+23-2091284474
 1921654412462
-MainWindow.xaml;Views\RungView.xaml;Views\XICView.xaml;
+MainWindow.xaml;Views\Instruction Views\InstructionDataTemplates.xaml;Views\Instruction Views\XICView.xaml;
 
 False
 

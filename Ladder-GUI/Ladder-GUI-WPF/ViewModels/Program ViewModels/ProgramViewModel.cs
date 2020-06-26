@@ -24,15 +24,6 @@ namespace Ladder_GUI_WPF
             }        
         }
 
-        private int _routineCount;
-        public int RoutineCount
-        {
-            get
-            {
-                RoutineList.Count;
-                OnPropertyChanged();
-            }
-        }
 
         public ProgramViewModel()
         {

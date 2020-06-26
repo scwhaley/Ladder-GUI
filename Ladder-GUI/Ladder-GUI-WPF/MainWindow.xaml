@@ -20,15 +20,24 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-            
-            <TextBlock Text="{Binding LoadedProgram.RoutineCount}" Grid.Column="1" Grid.Row="1" />
-            <TextBlock Text="Blank" Grid.Column="1" Grid.Row="2" />
-            
-            <VirtualizingStackPanel Name="TestStackPanelName" Grid.Column="1" Grid.Row="3" Orientation="Horizontal"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1" >
+                <ItemsControl ItemsSource="{Binding LoadedProgram.RoutineList}" >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding NumberOfRungs}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
         </Grid>
     </DockPanel>
 </Window>

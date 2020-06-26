@@ -7,10 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\RungView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\XICView.xaml.cs">
+    <Compile Update="Views\Instruction Views\XICView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,10 +15,10 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\RungView.xaml">
+    <Page Update="Views\Instruction Views\InstructionDataTemplates.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\XICView.xaml">
+    <Page Update="Views\Instruction Views\XICView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
