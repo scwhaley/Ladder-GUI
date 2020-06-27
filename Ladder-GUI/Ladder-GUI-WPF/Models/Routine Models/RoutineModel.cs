@@ -1,12 +1,9 @@
-﻿using Ladder_GUI_WPF.Models.Routine_Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Ladder_GUI_WPF
 {
     class RoutineModel : IRoutineModel
     {
-        List<IRungModel> IRoutineModel.RungList { get; set; }
+        public List<IRungModel> RungList { get; set; }
     }
 }

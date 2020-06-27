@@ -7,7 +7,7 @@ namespace Ladder_GUI_WPF
     {
         public RungInstructionsLinkedListNode Head { get; set; }
 
-        public void AppendInstruction(IBaseInstructionModel instruction, int index)
+        public void InsertInstruction(IBaseInstructionModel instruction, int index)
         {
             RungInstructionsLinkedListNode node = Head;
             RungInstructionsLinkedListNode previousNode = null;

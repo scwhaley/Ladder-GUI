@@ -27,4 +27,10 @@
         </Viewbox>
     </DataTemplate>
 
+    <DataTemplate x:Key="RungTemplate">
+        <Viewbox Stretch="Uniform">
+            <Control:XICView/>
+        </Viewbox>
+    </DataTemplate>
+
 </ResourceDictionary>

@@ -1,6 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using Ladder_GUI_WPF.Models;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace Ladder_GUI_WPF
 {
@@ -15,10 +18,22 @@ namespace Ladder_GUI_WPF
                     return;
 
                 _rungModel = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(RungModel));
             }
         }
+        private ObservableCollection<BaseInstructionViewModel> _gridFormatInstructionList;
+        public ObservableCollection<BaseInstructionViewModel> GridFormatInstructionList
+        {
+            get { return _gridFormatInstructionList; }
+            set 
+            {
+                if (_gridFormatInstructionList == value)
+                    return;
 
+                _gridFormatInstructionList = value;
+                OnPropertyChanged(nameof(GridFormatInstructionList));
+            }
+        }
         private int _rungNunmber;
         public int RungNumber { get => _rungNunmber;
             set
@@ -27,16 +42,16 @@ namespace Ladder_GUI_WPF
                     return;
 
                 _rungNunmber = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(RungNumber));
             }
         }
-        public ObservableCollection<BaseInstructionViewModel> RungInstructions { get; set; } = new ObservableCollection<BaseInstructionViewModel>();
         #endregion Properties
 
         #region Constructor
         public RungViewModel()
         {
-            IRungModel RungModel = new RungModel();
+            RungModel = new RungModel();
+            GridFormatInstructionList = new ObservableCollection<BaseInstructionViewModel>();
         }
         #endregion Constructor
 
@@ -44,7 +59,30 @@ namespace Ladder_GUI_WPF
         // Adds an instruction to the rung models linked list of instructions
         public void addInstruction(int index, IBaseInstructionModel instruction)
         {
-            RungModel.LinkedListOfInstructions.AppendInstruction(instruction, index);
+            RungModel.LinkedListOfInstructions.InsertInstruction(instruction, index);
+        }
+
+        public void CreateGridFormatRung()
+        {
+            GridFormatInstructionList = new ObservableCollection<BaseInstructionViewModel>();
+            InstructionViewModelFactory factory = new InstructionViewModelFactory();
+
+            RungInstructionsLinkedListNode node = RungModel.LinkedListOfInstructions.Head;
+            int rowIndex = 0;
+            int columnIndex = 0;
+
+            while (node != null)
+            {
+                BaseInstructionViewModel instructionViewModel = factory.CreateInstructionViewModel(node.Instruction);
+                instructionViewModel.RowIndex = rowIndex;
+                instructionViewModel.ColumnIndex = columnIndex;
+
+                GridFormatInstructionList.Add(instructionViewModel);
+
+                rowIndex++;
+
+                node = node.Next;
+            }
         }
 
         #endregion Methods

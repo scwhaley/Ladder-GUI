@@ -1,30 +1,43 @@
 ﻿using System;
-using System.Collections.Specialized;
-using System.ComponentModel;
 
 namespace Ladder_GUI_WPF
 {
     class RoutineViewModel : BaseViewModel
     {
 
-        private int _numberOfRungs;
-        public int NumberOfRungs
+        private IRoutineModel _routineModel;
+        public IRoutineModel RoutineModel
         {
-            get => _numberOfRungs;
+            get => _routineModel;
             set
             {
-                if (_numberOfRungs == value)
+                if (_routineModel == value)
                     return;
 
-                _numberOfRungs = value;
-                OnPropertyChanged();
+                _routineModel = value;
+                OnPropertyChanged(nameof(RoutineModel));
+            }
+        }
+
+        private int _tempProp;
+        public int TempProp
+        {
+            get => _tempProp;
+            set
+            {
+                if (_tempProp == value)
+                    return;
+
+                _tempProp = value;
+                OnPropertyChanged(nameof(TempProp));
             }
         }
 
         public RoutineViewModel()
         {
             Random randNumGenerator = new Random();
-            NumberOfRungs = randNumGenerator.Next();
+            TempProp = randNumGenerator.Next();
+            RoutineModel = new RoutineModel();
         }
     }
 }

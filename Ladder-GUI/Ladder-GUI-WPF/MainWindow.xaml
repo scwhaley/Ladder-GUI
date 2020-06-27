@@ -23,9 +23,9 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-            <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
-                <ItemsControl ItemsSource="{Binding LoadedProgram.RoutineList}" ItemTemplate="{StaticResource XICTemplate}" Style="{Binding TestStyle}" />
-            </ScrollViewer>
+
+            <ListView ItemsSource="{Binding LoadedProgram.RoutineList}" ItemTemplate="{StaticResource XICTemplate}" Grid.Column="1" Grid.Row="1" />
+
         </Grid>
     </DockPanel>
 </Window>

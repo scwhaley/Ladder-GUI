@@ -1,8 +1,4 @@
-﻿using Ladder_GUI_WPF.Models;
-using Ladder_GUI_WPF.Models.Routine_Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Ladder_GUI_WPF
 {

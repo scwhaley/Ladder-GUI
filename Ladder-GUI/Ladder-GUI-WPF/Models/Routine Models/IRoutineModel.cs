@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ladder_GUI_WPF.Models.Routine_Models
+namespace Ladder_GUI_WPF
 {
     interface IRoutineModel
     {

@@ -15,11 +15,53 @@ namespace Ladder_GUI_WPF
                     return;
   
                 _enabled = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Enabled));
             }
         }
         public string LongName { get; }
         public string ASCIIName { get; }
         public bool IsOutput { get; }
+        private int _rowIndex;
+        public int RowIndex
+        {
+            get { return _rowIndex; }
+            set 
+            {
+                if (_rowIndex == value)
+                    return;
+
+                _rowIndex = value;
+                OnPropertyChanged(nameof(RowIndex));
+            }
+        }
+        private int _columnIndex;
+        public int ColumnIndex
+        {
+            get { return _columnIndex; }
+            set
+            {
+                if (_columnIndex == value)
+                    return;
+
+                _columnIndex = value;
+                OnPropertyChanged(nameof(ColumnIndex));
+            }
+        }
+        private IBaseInstructionModel _instructionModel;
+
+        public IBaseInstructionModel InstructionModel
+        {   
+            get { return _instructionModel; }
+            set 
+            {
+                if (_instructionModel == value)
+                    return;
+
+                _instructionModel = value;
+                OnPropertyChanged(nameof(InstructionModel));
+            }
+        }
+
+
     }
 }
