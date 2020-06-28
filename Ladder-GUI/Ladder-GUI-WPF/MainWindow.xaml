@@ -9,7 +9,7 @@
     <DockPanel Background="{Binding BackgroundColor}">
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button Name="AddRoutineButton" Content="{Binding Path=BackgroundColor}" Command="{Binding LoadedProgram.AddRoutineCommand}" />
+                <Button Name="AddRoutineButton" Content="Toggle Background " Command="{Binding LoadProgramCommand}" />
                 <Button Name="AddXICInstruction" Content="Add XIC to Rung at 0" Command="{Binding AddXICInstructionCommand}" />
                 <Button Name="UpdateGridFormat" Content="CreateRungGridFormat" Command="{Binding CreateRungGridFormatCommand}" />
             </ToolBar>
@@ -28,8 +28,8 @@
 
             <ListView ItemsSource="{Binding TestRung.GridFormatInstructionList}"
                       ItemTemplate="{StaticResource XICTemplate}"
+                      ItemsPanel="{StaticResource RungPanelTemplate}"
                       ItemContainerStyle="{StaticResource RungItemContainerStyle}"
-                      Style="{StaticResource RungPanelTemplate}"
                       Grid.Column="1" Grid.Row="1"/>
         </Grid>
     </DockPanel>

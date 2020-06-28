@@ -72,7 +72,7 @@ namespace Ladder_GUI_WPF
 
         public void CreateGridFormatRung()
         {
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -In CreateGridFormatRung method {Environment.NewLine}");
+ //           File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -In CreateGridFormatRung method {Environment.NewLine}");
             GridFormatInstructionList = new ObservableCollection<BaseInstructionViewModel>();
             InstructionViewModelFactory factory = new InstructionViewModelFactory();
 
@@ -85,7 +85,7 @@ namespace Ladder_GUI_WPF
 
             while (node != null)
             {
-                File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Try to create InstructionViewModel for instruction node {node.ID}  {Environment.NewLine}");
+ //               File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Try to create InstructionViewModel for instruction node {node.ID}  {Environment.NewLine}");
                 rowIndex = randNumGen.Next(5);
 
                 BaseInstructionViewModel instructionViewModel = factory.CreateInstructionViewModel(node.Instruction);
@@ -94,10 +94,9 @@ namespace Ladder_GUI_WPF
                 instructionViewModel.VMID = node.ID;
 
                 GridFormatInstructionList.Add(instructionViewModel);
-                File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Added InstructionvViewModel to GridFormatInstructionList with RowIndex {rowIndex} and ColumnIndex {columnIndex} {Environment.NewLine}");
+ //               File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Added InstructionvViewModel to GridFormatInstructionList with RowIndex {rowIndex} and ColumnIndex {columnIndex} {Environment.NewLine}");
 
                 columnIndex++;
-
                 node = node.Next;
             }
         }
