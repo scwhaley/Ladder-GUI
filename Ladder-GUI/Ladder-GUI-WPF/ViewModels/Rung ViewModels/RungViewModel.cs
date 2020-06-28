@@ -80,9 +80,13 @@ namespace Ladder_GUI_WPF
             int rowIndex = 0;
             int columnIndex = 0;
 
+            // DELETE: Just for checking row index funtionality
+            Random randNumGen = new Random();
+
             while (node != null)
             {
                 File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Try to create InstructionViewModel for instruction node {node.ID}  {Environment.NewLine}");
+                rowIndex = randNumGen.Next(5);
 
                 BaseInstructionViewModel instructionViewModel = factory.CreateInstructionViewModel(node.Instruction);
                 instructionViewModel.RowIndex = rowIndex;

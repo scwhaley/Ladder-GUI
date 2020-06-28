@@ -2,29 +2,29 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Ladder_GUI_WPF.Views.Rung_Views" xmlns:Control="clr-namespace:Ladder_GUI_WPF.Views">
 
-    <Style x:Key="RungItemContainerStyle" TargetType="ListView">
+    <Style x:Key="RungItemContainerStyle" TargetType="ListViewItem">
         <Setter Property="Grid.Column" Value="{Binding ColumnIndex}" />
         <Setter Property="Grid.Row" Value="{Binding RowIndex}" />
-        <Setter Property="Width" Value="100"/>
     </Style>
 
     <Style x:Key="RungPanelTemplate" TargetType="ListView">
-        <Setter Property="Grid.Column" Value="3" />
-        <Setter Property="Grid.Row" Value="2" />
         <Setter Property="ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
                     </Grid>
                 </ItemsPanelTemplate>
             </Setter.Value>

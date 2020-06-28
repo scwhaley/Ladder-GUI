@@ -28,7 +28,7 @@
     </Style>
 
     <DataTemplate x:Key="XICTemplate" >
-        <Viewbox Grid.Column="{Binding ColumnIndex}" MaxWidth="100" MaxHeight="100" Stretch="Uniform">
+        <Viewbox MaxWidth="100" MaxHeight="100" Stretch="Uniform">
             <Control:XICView/>
         </Viewbox>
     </DataTemplate>

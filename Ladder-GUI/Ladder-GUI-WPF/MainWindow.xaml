@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Ladder_GUI_WPF"
+        xmlns:local="clr-namespace:Ladder_GUI_WPF" xmlns:Control="clr-namespace:Ladder_GUI_WPF.Views"
         mc:Ignorable="d"
         Title="Ladder GUI" Height="450" Width="800">
     <DockPanel Background="{Binding BackgroundColor}">
@@ -26,12 +26,11 @@
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
 
-            <ListView ItemsSource="{Binding TestRung.GridFormatInstructionList}" 
-                      Style="{StaticResource RungPanelTemplate}"  
-                      ItemContainerStyle="{Binding RungItemContainerStyle}" 
-                      ItemTemplate="{StaticResource XICTemplate}" 
+            <ListView ItemsSource="{Binding TestRung.GridFormatInstructionList}"
+                      ItemTemplate="{StaticResource XICTemplate}"
+                      ItemContainerStyle="{StaticResource RungItemContainerStyle}"
+                      Style="{StaticResource RungPanelTemplate}"
                       Grid.Column="1" Grid.Row="1"/>
-
         </Grid>
     </DockPanel>
 </Window>
