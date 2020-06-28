@@ -16,7 +16,7 @@
             <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="{Binding TempProp}" Grid.Row="0" Grid.Column="0" Margin ="0,0,0,5C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\Views\Instruction Views\XICView.xaml" FontSize="18" HorizontalAlignment="Center"/>
+        <TextBlock Text="{Binding ASCIIName}" Grid.Row="0" Grid.Column="0" Margin ="0,0,0,5" FontSize="18" HorizontalAlignment="Center"/>
 
         <Line X1="0" Y1="35.5" X2="50" Y2="35.5" Stroke="RoyalBlue" StrokeThickness="2" Grid.Row="1" Grid.Column="0" />
         <Line X1="50" Y1="0" X2="50" Y2="80" Stroke="RoyalBlue" StrokeThickness="2" Grid.Row="1" Grid.Column="0" />
