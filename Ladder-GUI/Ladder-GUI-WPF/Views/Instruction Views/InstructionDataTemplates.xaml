@@ -9,26 +9,26 @@
         <TextBlock Text="{Binding NumberOfRungs}" />
     </DataTemplate>
 
-    <Style x:Key="TestStyle" TargetType="ItemsControl">
+    <Style x:Key="TestStyle" TargetType="ListView">
         <Setter Property="ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>
-                    <DockPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" />
-                    </DockPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
                 </ItemsPanelTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <DataTemplate x:Key="XICTemplate">
-        <Viewbox MaxWidth="100" MaxHeight="100" Stretch="Uniform">
-            <Control:XICView/>
-        </Viewbox>
-    </DataTemplate>
-
-    <DataTemplate x:Key="RungTemplate">
-        <Viewbox Stretch="Uniform">
+    <DataTemplate x:Key="XICTemplate" >
+        <Viewbox Grid.Column="{Binding ColumnIndex}" MaxWidth="100" MaxHeight="100" Stretch="Uniform">
             <Control:XICView/>
         </Viewbox>
     </DataTemplate>

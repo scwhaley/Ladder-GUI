@@ -8,5 +8,10 @@ namespace Ladder_GUI_WPF
     {
         public bool Enabled { get; set; }
         public RungInstructionsLinkedList LinkedListOfInstructions { get; set; }
+
+        public RungModel()
+        {
+            LinkedListOfInstructions = new RungInstructionsLinkedList();
+        }
     }
 }

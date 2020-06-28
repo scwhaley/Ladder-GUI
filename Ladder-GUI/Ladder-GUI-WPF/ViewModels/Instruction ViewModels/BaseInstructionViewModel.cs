@@ -18,9 +18,11 @@ namespace Ladder_GUI_WPF
                 OnPropertyChanged(nameof(Enabled));
             }
         }
-        public string LongName { get; }
-        public string ASCIIName { get; }
-        public bool IsOutput { get; }
+        public string LongName { get; set; }
+        public string ASCIIName { get; set; }
+        public bool IsOutput { get; set; }
+        public int VMID { get; set; }
+
         private int _rowIndex;
         public int RowIndex
         {
@@ -52,7 +54,7 @@ namespace Ladder_GUI_WPF
         public IBaseInstructionModel InstructionModel
         {   
             get { return _instructionModel; }
-            set 
+            protected set 
             {
                 if (_instructionModel == value)
                     return;

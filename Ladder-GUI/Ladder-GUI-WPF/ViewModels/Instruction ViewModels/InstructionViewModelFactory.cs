@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Ladder_GUI_WPF
 {
@@ -6,6 +7,8 @@ namespace Ladder_GUI_WPF
     {
         public override BaseInstructionViewModel CreateInstructionViewModel(IBaseInstructionModel InstructionModel)
         {
+            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Entered CreateInstructionViewModel method of InstructionViewModelFactory {Environment.NewLine}");
+
             switch (InstructionModel.ASCIIName)
             {
                 case ("XIC"):

@@ -14,6 +14,9 @@ namespace Ladder_GUI_WPF
     {
         #region Commands
         public ICommand LoadProgramCommand { get; set; }
+        public ICommand AddXICInstructionCommand { get; set; }
+        public ICommand CreateRungGridFormatCommand { get; set; }
+
 
         #endregion Commands
         #region Properties
@@ -27,7 +30,7 @@ namespace Ladder_GUI_WPF
                     return;
 
                 _loadedProgram = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(LoadedProgram));
             }
         }
 
@@ -42,9 +45,24 @@ namespace Ladder_GUI_WPF
                     return;
 
                 _backgroundColor = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(BackgroundColor));
             }
         }
+
+        private RungViewModel _testRung;
+        public RungViewModel TestRung
+        {
+            get => _testRung;
+            set
+            {
+                if (_testRung == value)
+                    return;
+
+                _testRung = value;
+                OnPropertyChanged(nameof(TestRung));
+            }
+        }
+
         #endregion Properties
 
         public LadderGUIViewModel()
@@ -52,6 +70,10 @@ namespace Ladder_GUI_WPF
             BackgroundColor = "LightBlue";
             this.LoadProgramCommand = new RelayCommand(LoadProgram);
             LoadedProgram = new ProgramViewModel();
+            TestRung = new RungViewModel();
+            this.AddXICInstructionCommand = new RelayCommand(AddXICInstruction);
+            this.CreateRungGridFormatCommand = new RelayCommand(FormatAsGrid);
+            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Created new LadderGuiViewModel {Environment.NewLine}");
         }
 
         private void CreateNewProgram()
@@ -61,13 +83,23 @@ namespace Ladder_GUI_WPF
 
         private void LoadProgram()
         {
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"Entered LoadProgram method {Environment.NewLine}");
+            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Entered LoadProgram method {Environment.NewLine}");
             if (BackgroundColor == "LightBlue")
                 BackgroundColor = "LightGreen";
             else
                 BackgroundColor = "LightBlue";
+        }
 
+        private void AddXICInstruction()
+        {
+            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Calling TestRung.AddInstruction method {Environment.NewLine}");
+            TestRung.addInstruction(0, new XICInstructionModel());
+        }
 
+        private void FormatAsGrid()
+        {
+            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Calling TestRung. method {Environment.NewLine}");
+            TestRung.CreateGridFormatRung();
         }
     }
 }

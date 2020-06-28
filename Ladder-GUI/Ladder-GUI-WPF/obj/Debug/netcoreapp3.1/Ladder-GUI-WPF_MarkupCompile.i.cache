@@ -1,0 +1,20 @@
+﻿Ladder-GUI-WPF
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\
+Ladder_GUI_WPF
+none
+false
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\App.xaml
+51150609645
+
+321926092568
+1921654412462
+MainWindow.xaml;Views\Instruction Views\InstructionDataTemplates.xaml;Views\Instruction Views\XICView.xaml;Views\Rung Views\RungTemplates.xaml;Views\Rung Views\RungView.xaml;
+
+True
+

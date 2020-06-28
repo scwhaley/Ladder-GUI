@@ -4,7 +4,12 @@
              StartupUri="MainWindow.xaml">
     
     <Application.Resources>
-        <ResourceDictionary Source="Views/Rung Views/RungTemplates.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Views/Rung Views/RungTemplates.xaml" />
+                <ResourceDictionary Source="Views/Instruction Views/InstructionDataTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
     
 </Application>

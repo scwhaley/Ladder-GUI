@@ -15,7 +15,6 @@ namespace Ladder_GUI_WPF
         // The calling member's name will be used as the parameter.
         protected void OnPropertyChanged(string name = null)
         {
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"Entered OnPropertyChanged method from {name}");
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
         }

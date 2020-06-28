@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,8 @@ namespace Ladder_GUI_WPF
         {
             InitializeComponent();
             DataContext = new LadderGUIViewModel();
+            File.AppendAllText(@"C:\Temp\Debug.txt", $"Showed GUI {Environment.NewLine}");
+
         }
     }
 }
