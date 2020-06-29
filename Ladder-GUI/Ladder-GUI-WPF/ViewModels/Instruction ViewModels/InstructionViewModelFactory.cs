@@ -7,7 +7,7 @@ namespace Ladder_GUI_WPF
     {
         public override BaseInstructionViewModel CreateInstructionViewModel(IBaseInstructionModel InstructionModel)
         {
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Entered CreateInstructionViewModel method of InstructionViewModelFactory {Environment.NewLine}");
+            //File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Entered CreateInstructionViewModel method of InstructionViewModelFactory {Environment.NewLine}");
 
             switch (InstructionModel.ASCIIName)
             {

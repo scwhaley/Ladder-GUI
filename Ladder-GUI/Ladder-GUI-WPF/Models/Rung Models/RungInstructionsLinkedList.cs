@@ -22,12 +22,12 @@ namespace Ladder_GUI_WPF
             RungInstructionsLinkedListNode newNode = new RungInstructionsLinkedListNode(instruction);
 
             int tracker = 0;
-            try
-            {
-                File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - In InsertInstruction trying to insert {newNode.Instruction.ASCIIName}.{newNode.ID} instruction at index {index} {Environment.NewLine}");
-                File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Current Head: {node.Instruction.ASCIIName}.{node.ID} {Environment.NewLine}");
-            }
-            catch(Exception) { }
+            //try
+            //{
+            //    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - In InsertInstruction trying to insert {newNode.Instruction.ASCIIName}.{newNode.ID} instruction at index {index} {Environment.NewLine}");
+            //    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Current Head: {node.Instruction.ASCIIName}.{node.ID} {Environment.NewLine}");
+            //}
+            //catch(Exception) { }
 
 
             // Head
@@ -41,12 +41,12 @@ namespace Ladder_GUI_WPF
                 Head.Previous = newNode;
                 newNode.Next = Head;
                 Head = newNode;
-                try
-                {
-                    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Changed Head to: {Head.Instruction.ASCIIName}.{Head.ID} {Environment.NewLine}");
-                    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - RungInstructionLinkedList.Count: {this.GetNumberOfInstructions()} {Environment.NewLine}");
-                }
-                catch(Exception) { }
+                //try
+                //{
+                //    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Changed Head to: {Head.Instruction.ASCIIName}.{Head.ID} {Environment.NewLine}");
+                //    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - RungInstructionLinkedList.Count: {this.GetNumberOfInstructions()} {Environment.NewLine}");
+                //}
+                //catch(Exception) { }
 
                 return;
             }
@@ -60,7 +60,7 @@ namespace Ladder_GUI_WPF
                 nextNode = node.Next;
                 tracker++;
 
-                try { File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Node {tracker} is: {node.Instruction.ASCIIName}.{node.ID} {Environment.NewLine}"); } catch(Exception) { }
+                //try { File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Node {tracker} is: {node.Instruction.ASCIIName}.{node.ID} {Environment.NewLine}"); } catch(Exception) { }
 
             }
 
@@ -68,13 +68,13 @@ namespace Ladder_GUI_WPF
             previousNode.Next = newNode;
             node.Previous = newNode;
 
-            try
-            {
-                File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Changed Node {tracker} to: {node.Instruction.ASCIIName}.{node.ID} {Environment.NewLine}");
-                File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Node {tracker}.Previous: {previousNode.Instruction.ASCIIName}.{node.ID}{Environment.NewLine}");
-                File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Node {tracker}.Next : {nextNode.Instruction.ASCIIName}.{node.ID} {Environment.NewLine}");
-            }
-            catch(Exception){ }
+            //try
+            //{
+            //    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Changed Node {tracker} to: {node.Instruction.ASCIIName}.{node.ID} {Environment.NewLine}");
+            //    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Node {tracker}.Previous: {previousNode.Instruction.ASCIIName}.{node.ID}{Environment.NewLine}");
+            //    File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Node {tracker}.Next : {nextNode.Instruction.ASCIIName}.{node.ID} {Environment.NewLine}");
+            //}
+            //catch(Exception){ }
         }
 
         public void DeleteInstruction(int index)
@@ -114,7 +114,7 @@ namespace Ladder_GUI_WPF
             // For other nodes, traverse the linked list to the index
             while (node != null)
             {
-                try { File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - In GetNumInstructions - Node {count} is: {node.Instruction.ASCIIName}.{node.ID}{Environment.NewLine}"); } catch(Exception) { }
+                //try { File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - In GetNumInstructions - Node {count} is: {node.Instruction.ASCIIName}.{node.ID}{Environment.NewLine}"); } catch(Exception) { }
                 node = node.Next;
                 count++;
             }
