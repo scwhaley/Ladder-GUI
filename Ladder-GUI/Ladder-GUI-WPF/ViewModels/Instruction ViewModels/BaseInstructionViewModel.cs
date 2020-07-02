@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ladder_GUI_WPF
 {
-    abstract class BaseInstructionViewModel : BaseViewModel
+    class BaseInstructionViewModel : BaseViewModel
     {
         private bool _enabled;
         public bool Enabled {get => _enabled;
@@ -64,6 +64,12 @@ namespace Ladder_GUI_WPF
             }
         }
 
-
+        public BaseInstructionViewModel(IBaseInstructionModel instructionModel)
+        {
+            InstructionModel = instructionModel;
+            ASCIIName = instructionModel.ShortName;
+            LongName = instructionModel.LongName;
+            VMID = instructionModel.ID;
+        }
     }
 }

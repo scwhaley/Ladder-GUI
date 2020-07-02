@@ -2,9 +2,8 @@
 {
     class XIOViewModel : BaseInstructionViewModel
     {
-        public XIOViewModel(IBaseInstructionModel instructionModel)
+        public XIOViewModel(IBaseInstructionModel instructionModel) : base(instructionModel)
         {
-            InstructionModel = instructionModel;
         }
     }
 }

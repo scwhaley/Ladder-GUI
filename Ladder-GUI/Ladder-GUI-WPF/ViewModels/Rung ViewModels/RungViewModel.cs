@@ -75,7 +75,6 @@ namespace Ladder_GUI_WPF
 
         public void CreateGridFormatRung()
         {
-            Stopwatch stopwatch = Stopwatch.StartNew();
             InstructionViewModelFactory factory = new InstructionViewModelFactory();
             BaseInstructionViewModel instructionViewModel;
 
@@ -84,17 +83,13 @@ namespace Ladder_GUI_WPF
             int columnIndex = 0;
             int loopNum = 0;
             bool difference = false;
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"Setup ElapsedTime: {stopwatch.ElapsedMilliseconds}ms {Environment.NewLine}");
 
-            Stopwatch loopWatch = Stopwatch.StartNew();
-            // Walk the InstructionList and verify that it matches the GridFormatInstructionList.
+            // Walk the InstructionList and verify that it matches the existing GridFormatInstructionList.
             // If there is a node that doesn't match, start recreating the GridFormatList from there.
             // Better than fully recreating each time, but only marginal benefit for changes near the beginning of the list.
             while (node != null)
             {
-                loopWatch.Restart();
-
-                switch (GridFormatInstructionList.Count <= loopNum)
+                switch (loopNum >= GridFormatInstructionList.Count)
                 {
                     // If we need to extend the list
                     case true:
@@ -103,7 +98,6 @@ namespace Ladder_GUI_WPF
                         instructionViewModel.RowIndex = rowIndex;
                         instructionViewModel.ColumnIndex = columnIndex;
                         instructionViewModel.VMID = node.NodeID;
-                        File.AppendAllText(@"C:\Temp\Debug.txt", $"VM {columnIndex}.{instructionViewModel.VMID} created and added to list ElapsedTime: {stopwatch.ElapsedMilliseconds}ms {Environment.NewLine}");
                         break;
 
                     // If we only need to replace elements. Difference represents that an element has changed, so we can't rely on the existing GridFormatList any more.
@@ -116,20 +110,13 @@ namespace Ladder_GUI_WPF
                             instructionViewModel.ColumnIndex = columnIndex;
                             instructionViewModel.VMID = node.NodeID;
                             difference = true;
-                            File.AppendAllText(@"C:\Temp\Debug.txt", $"VM {columnIndex}.{instructionViewModel.VMID} created and replaced in list ElapsedTime: {stopwatch.ElapsedMilliseconds}ms {Environment.NewLine}");
                         }
                         break;
                 }
-
                 columnIndex++;
                 loopNum++;
                 node = node.Next;
-                File.AppendAllText(@"C:\Temp\Debug.txt", $"Finished Checking VM{columnIndex - 1} ElapsedTime: {stopwatch.ElapsedMilliseconds}ms {Environment.NewLine}");
-
             }
-
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"CreateGridFormatRung ElapsedTime: {stopwatch.ElapsedMilliseconds}ms {Environment.NewLine}");
-            stopwatch.Stop();
         }
 
         #endregion Methods

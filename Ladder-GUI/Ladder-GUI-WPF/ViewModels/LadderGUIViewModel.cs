@@ -15,8 +15,6 @@ namespace Ladder_GUI_WPF
         #region Commands
         public ICommand LoadProgramCommand { get; set; }
         public ICommand AddXICInstructionCommand { get; set; }
-        public ICommand CreateRungGridFormatCommand { get; set; }
-
 
         #endregion Commands
         #region Properties
@@ -72,8 +70,6 @@ namespace Ladder_GUI_WPF
             LoadedProgram = new ProgramViewModel();
             TestRung = new RungViewModel();
             this.AddXICInstructionCommand = new RelayCommand(AddXICInstruction);
-            this.CreateRungGridFormatCommand = new RelayCommand(FormatAsGrid);
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Created new LadderGuiViewModel {Environment.NewLine}");
         }
 
         private void CreateNewProgram()
@@ -94,11 +90,6 @@ namespace Ladder_GUI_WPF
         {
 //            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Calling TestRung.AddInstruction method {Environment.NewLine}");
             TestRung.addInstruction(0, new XICInstructionModel());
-        }
-
-        private void FormatAsGrid()
-        {
-//            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Calling TestRung. method {Environment.NewLine}");
             TestRung.CreateGridFormatRung();
         }
     }

@@ -2,9 +2,8 @@
 {
     class OTEViewModel : BaseInstructionViewModel
     {
-        public OTEViewModel(IBaseInstructionModel instructionModel)
+        public OTEViewModel(IBaseInstructionModel instructionModel) : base (instructionModel)
         {
-            InstructionModel = instructionModel;
         }
     }
 }

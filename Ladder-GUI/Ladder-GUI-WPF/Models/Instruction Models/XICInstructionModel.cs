@@ -1,10 +1,12 @@
 ﻿namespace Ladder_GUI_WPF
 {
-    class XICInstructionModel : IBaseInstructionModel
+    class XICInstructionModel : BaseInstructionModel
     {
-        public bool Enabled { get ; set; }
-        public string LongName { get; } = "Examine If Closed";
-        public string ShortName { get; } = "XIC";
-        public bool IsOutput { get; } = false;
+        public XICInstructionModel()
+        {
+            LongName = "Examine If Closed";
+            ShortName = "XIC";
+            IsOutput = false;
+        }
     }
 }

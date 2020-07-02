@@ -12,7 +12,7 @@ namespace Ladder_GUI_WPF
 
         public string ShortName { get; protected set; }
 
-        public bool IsOutput { get; protected set;
+        public bool IsOutput { get; protected set; }
 
         private int id;
         public int ID

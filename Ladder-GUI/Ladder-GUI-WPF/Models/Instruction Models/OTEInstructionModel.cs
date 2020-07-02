@@ -1,10 +1,14 @@
-﻿namespace Ladder_GUI_WPF
+﻿using System.Reflection;
+
+namespace Ladder_GUI_WPF
 {
-    class OTEInstructionModel : IBaseInstructionModel
+    class OTEInstructionModel : BaseInstructionModel
     {
-        public bool Enabled { get; set; }
-        public string LongName { get; } = "Output Energize";
-        public string ASCIIName { get; } = "OTE";
-        public bool IsOutput { get; } = true;
+        public OTEInstructionModel()
+        {
+            LongName = "Output Energize";
+            ShortName = "OTE";
+            IsOutput = true;  
+        }
     }
 }
