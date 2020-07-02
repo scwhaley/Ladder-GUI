@@ -79,7 +79,6 @@ namespace Ladder_GUI_WPF
 
         private void LoadProgram()
         {
-//            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Entered LoadProgram method {Environment.NewLine}");
             if (BackgroundColor == "LightBlue")
                 BackgroundColor = "LightGreen";
             else
@@ -88,7 +87,6 @@ namespace Ladder_GUI_WPF
 
         private void AddXICInstruction()
         {
-//            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -Calling TestRung.AddInstruction method {Environment.NewLine}");
             TestRung.addInstruction(0, new XICInstructionModel());
             TestRung.CreateGridFormatRung();
         }
