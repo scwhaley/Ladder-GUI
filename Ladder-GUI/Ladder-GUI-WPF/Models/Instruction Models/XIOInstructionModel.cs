@@ -4,7 +4,7 @@
     {
         public bool Enabled { get; set; }
         public string LongName { get; } = "Examine If Open";
-        public string ASCIIName { get; } = "XIO";
+        public string ShortName { get; } = "XIO";
         public bool IsOutput { get; } = false;
     }
 }

@@ -102,19 +102,19 @@ namespace Ladder_GUI_WPF
                         GridFormatInstructionList.Add(instructionViewModel);
                         instructionViewModel.RowIndex = rowIndex;
                         instructionViewModel.ColumnIndex = columnIndex;
-                        instructionViewModel.VMID = node.ID;
+                        instructionViewModel.VMID = node.NodeID;
                         File.AppendAllText(@"C:\Temp\Debug.txt", $"VM {columnIndex}.{instructionViewModel.VMID} created and added to list ElapsedTime: {stopwatch.ElapsedMilliseconds}ms {Environment.NewLine}");
                         break;
 
                     // If we only need to replace elements. Difference represents that an element has changed, so we can't rely on the existing GridFormatList any more.
                     case false:
-                        if (node.ID != GridFormatInstructionList[loopNum].VMID || difference)
+                        if (node.NodeID != GridFormatInstructionList[loopNum].VMID || difference)
                         {
                             instructionViewModel = factory.CreateInstructionViewModel(node.Instruction);
                             GridFormatInstructionList[loopNum] = instructionViewModel;
                             instructionViewModel.RowIndex = rowIndex;
                             instructionViewModel.ColumnIndex = columnIndex;
-                            instructionViewModel.VMID = node.ID;
+                            instructionViewModel.VMID = node.NodeID;
                             difference = true;
                             File.AppendAllText(@"C:\Temp\Debug.txt", $"VM {columnIndex}.{instructionViewModel.VMID} created and replaced in list ElapsedTime: {stopwatch.ElapsedMilliseconds}ms {Environment.NewLine}");
                         }

@@ -9,7 +9,7 @@ namespace Ladder_GUI_WPF
         {
             //File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Entered CreateInstructionViewModel method of InstructionViewModelFactory {Environment.NewLine}");
 
-            switch (InstructionModel.ASCIIName)
+            switch (InstructionModel.ShortName)
             {
                 case ("XIC"):
                     return new XICViewModel(InstructionModel);
@@ -20,7 +20,7 @@ namespace Ladder_GUI_WPF
             }
 
             // If the instruction type did not exist, throw argument exception
-            throw new ArgumentException($"The {InstructionModel.ASCIIName} instruction is not in the {nameof(InstructionViewModelFactory)} factory");
+            throw new ArgumentException($"The {InstructionModel.ShortName} instruction is not in the {nameof(InstructionViewModelFactory)} factory");
         }
     }
 }

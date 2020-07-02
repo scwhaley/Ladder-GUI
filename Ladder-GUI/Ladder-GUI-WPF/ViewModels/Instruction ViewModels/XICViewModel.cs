@@ -8,7 +8,7 @@ namespace Ladder_GUI_WPF
         public XICViewModel(IBaseInstructionModel instructionModel)
         {
             InstructionModel = instructionModel;
-            ASCIIName = instructionModel.ASCIIName;
+            ASCIIName = instructionModel.ShortName;
             LongName = instructionModel.LongName;
             File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Created new XICViewModel {Environment.NewLine}");
         }
