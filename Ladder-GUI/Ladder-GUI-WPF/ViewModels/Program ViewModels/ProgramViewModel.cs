@@ -6,31 +6,47 @@ using System.Windows.Input;
 
 namespace Ladder_GUI_WPF
 {
+    /// <summary>
+    /// A view model for a program model.
+    /// </summary>
     class ProgramViewModel : BaseViewModel
     {
         #region Commands
         public ICommand AddRoutineCommand { get; set; }
         #endregion Commands
 
-        private ObservableCollection<RoutineViewModel> _routineList;
-        public ObservableCollection<RoutineViewModel> RoutineList { get => _routineList;
-            set
+        #region Properties
+        public ObservableCollection<RoutineViewModel> RoutineList { get => (ObservableCollection<RoutineViewModel>)_programModel.RoutineList; }
+
+        private ProgramModel _programModel;
+        public ProgramModel ProgramModel
+        {
+            get { return _programModel; }
+            private set 
             {
-                if (_routineList == value)
+                if (_programModel == value)
                     return;
 
-                _routineList = value;
-                OnPropertyChanged();
-            }        
+                _programModel = value;
+                OnPropertyChanged(nameof(ProgramModel));
+            }
         }
 
+        #endregion Properties
 
-        public ProgramViewModel()
+        #region Constructor
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="programModel">The model to create the view model from.</param>
+        public ProgramViewModel(ProgramModel programModel)
         {
-            RoutineList = new ObservableCollection<RoutineViewModel>();
+            ProgramModel = programModel;
             this.AddRoutineCommand = new RelayCommand(AddRoutine);
         }
+        #endregion Constructor
 
+        #region Methods
         private void AddRoutine()
         {
             RoutineList.Add(new RoutineViewModel());
@@ -40,5 +56,6 @@ namespace Ladder_GUI_WPF
         {
             RoutineList.RemoveAt(index);
         }
+        #endregion Methods
     }
 }

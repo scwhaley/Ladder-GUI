@@ -27,7 +27,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-            <TextBlock Text="{Binding LoadedProgram}"
+            <TextBlock Text="{Binding LoadedProgram}" />
             <StackPanel Orientation="Vertical" CanVerticallyScroll="True">
                 
             </StackPanel>

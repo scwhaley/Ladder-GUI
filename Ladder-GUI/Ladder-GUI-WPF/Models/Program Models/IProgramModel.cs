@@ -5,6 +5,6 @@ namespace Ladder_GUI_WPF
     interface IProgramModel
     {
         public string Name { get; set; }
-        public List<IRoutineModel> RoutineList { get; set; }
+        public IList<IRoutineModel> RoutineList { get; set; }
     }
 }

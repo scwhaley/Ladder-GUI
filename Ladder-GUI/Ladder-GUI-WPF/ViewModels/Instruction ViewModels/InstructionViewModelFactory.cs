@@ -5,10 +5,13 @@ namespace Ladder_GUI_WPF
 {
     class InstructionViewModelFactory : AbstractInstructionViewModelFactory
     {
+        /// <summary>
+        /// Creates an instruction view model for the given instruction model.
+        /// </summary>
+        /// <param name="InstructionModel">The instruction model to make the view model from.</param>
+        /// <returns>An instruction view model derived from BaseInstructionViewModel.</returns>
         public override BaseInstructionViewModel CreateInstructionViewModel(IBaseInstructionModel InstructionModel)
         {
-            //File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Entered CreateInstructionViewModel method of InstructionViewModelFactory {Environment.NewLine}");
-
             switch (InstructionModel.ShortName)
             {
                 case ("XIC"):

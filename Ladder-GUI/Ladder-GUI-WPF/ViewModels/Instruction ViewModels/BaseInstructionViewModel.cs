@@ -5,8 +5,12 @@ using System.Text;
 
 namespace Ladder_GUI_WPF
 {
-    class BaseInstructionViewModel : BaseViewModel
+    /// <summary>
+    /// The base view model for all instructions.
+    /// </summary>
+    abstract class BaseInstructionViewModel : BaseViewModel
     {
+        #region Properties
         private bool _enabled;
         public bool Enabled {get => _enabled;
             set
@@ -18,10 +22,10 @@ namespace Ladder_GUI_WPF
                 OnPropertyChanged(nameof(Enabled));
             }
         }
-        public string LongName { get; set; }
-        public string ASCIIName { get; set; }
-        public bool IsOutput { get; set; }
-        public int VMID { get; set; }
+        public string LongName { get => _instructionModel.LongName; }
+        public string ShortName { get => _instructionModel.ShortName; }
+        public bool IsOutput { get => _instructionModel.IsOutput; }
+        public int VMID { get => _instructionModel.ID; }
 
         private int _rowIndex;
         public int RowIndex
@@ -64,12 +68,17 @@ namespace Ladder_GUI_WPF
             }
         }
 
+        #endregion Properties
+
+        #region Constructor
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="instructionModel">The instruction model linked to the instruction view model.</param>
         public BaseInstructionViewModel(IBaseInstructionModel instructionModel)
         {
             InstructionModel = instructionModel;
-            ASCIIName = instructionModel.ShortName;
-            LongName = instructionModel.LongName;
-            VMID = instructionModel.ID;
         }
+        #endregion Constructor
     }
 }
