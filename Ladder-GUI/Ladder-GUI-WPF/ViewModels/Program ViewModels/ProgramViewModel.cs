@@ -16,7 +16,7 @@ namespace Ladder_GUI_WPF
         #endregion Commands
 
         #region Properties
-        public ObservableCollection<RoutineViewModel> RoutineList { get => (ObservableCollection<RoutineViewModel>)_programModel.RoutineList; }
+        public ObservableCollection<RoutineViewModel> ObservableRoutineList { get => (ObservableCollection<RoutineViewModel>)_programModel.RoutineList; }
 
         private ProgramModel _programModel;
         public ProgramModel ProgramModel
@@ -49,12 +49,17 @@ namespace Ladder_GUI_WPF
         #region Methods
         private void AddRoutine()
         {
-            RoutineList.Add(new RoutineViewModel());
+            _programModel.RoutineList.Add(new RoutineModel());
         }
 
         public void DeleteRoutine(int index)
         {
-            RoutineList.RemoveAt(index);
+            _programModel.RoutineList.RemoveAt(index);
+        }
+
+        public void UpdateRoutineViewModels()
+        {
+
         }
         #endregion Methods
     }
