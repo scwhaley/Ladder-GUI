@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Control="clr-namespace:Ladder_GUI_WPF.Views">
+
+    <!--Data Template for Routine TreeView-->
+    <DataTemplate x:Key="RoutineTreeViewItemTemplate">
+        <TextBlock Text="{Binding Name}"/>
+    </DataTemplate>
+
+
+</ResourceDictionary>

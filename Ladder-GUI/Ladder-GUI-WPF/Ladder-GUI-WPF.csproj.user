@@ -24,6 +24,9 @@
     <Page Update="Views\Instruction Views\XICView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Program Views\ProgramTemplates.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Rung Views\RungTemplates.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -24,8 +24,5 @@
             </Grid.RowDefinitions>
         </Grid>
     </ItemsPanelTemplate>
- 
-
-
-
-</ResourceDictionary>
+    
+ </ResourceDictionary>

@@ -8,22 +8,19 @@ namespace Ladder_GUI_WPF
         /// <summary>
         /// Creates an instruction view model for the given instruction model.
         /// </summary>
-        /// <param name="InstructionModel">The instruction model to make the view model from.</param>
+        /// <param name="instructionModel">The instruction model to make the view model from.</param>
         /// <returns>An instruction view model derived from BaseInstructionViewModel.</returns>
-        public override BaseInstructionViewModel CreateInstructionViewModel(IBaseInstructionModel InstructionModel)
+        public override BaseInstructionViewModel CreateInstructionViewModel(IBaseInstructionModel instructionModel)
         {
-            switch (InstructionModel.ShortName)
-            {
-                case ("XIC"):
-                    return new XICViewModel(InstructionModel);
-                case ("XIO"):
-                    return new XIOViewModel(InstructionModel);
-                case ("OTE"):
-                    return new OTEViewModel(InstructionModel);
-            }
+            if (instructionModel is XICInstructionModel)
+                return new XICViewModel(instructionModel);
+            if (instructionModel is XIOInstructionModel)
+                return new XIOViewModel(instructionModel);
+            if (instructionModel is OTEInstructionModel)
+                return new OTEViewModel(instructionModel);
 
             // If the instruction type did not exist, throw argument exception
-            throw new ArgumentException($"The {InstructionModel.ShortName} instruction is not in the {nameof(InstructionViewModelFactory)} factory");
+            throw new ArgumentException($"The {instructionModel.ShortName} instruction is not in the {nameof(InstructionViewModelFactory)} factory");
         }
     }
 }

@@ -6,6 +6,8 @@ namespace Ladder_GUI_WPF
 {
     interface IRoutineModel
     {
-        public List<IRungModel> RungList { get; set; }
+        public string Type { get; }
+        public string Name { get; set; }
+
     }
 }

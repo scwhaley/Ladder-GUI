@@ -5,37 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ladder_GUI_WPF" xmlns:Control="clr-namespace:Ladder_GUI_WPF.Views"
         mc:Ignorable="d"
-        Title="Ladder GUI" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Ladder GUI" Height="800" Width="1400" WindowStartupLocation="CenterScreen">
+    
     <DockPanel Background="{Binding BackgroundColor}">
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button Name="AddRoutineButton" Content="Toggle Background " Command="{Binding LoadProgramCommand}" />
-                <Button Name="AddXICInstruction" Content="Add XIC to Rung at 0" Command="{Binding AddXICInstructionCommand}" />
-                <Button Name="UpdateGridFormat" Content="CreateRungGridFormat" Command="{Binding CreateRungGridFormatCommand}" />
+                <Button Content="Toggle Background" Command="{Binding LoadProgramCommand}" />
+                <Button Content="Add Routine" Command="{Binding LoadedProgram.AddRoutineCommand}" />
+                <Button Content="Add XIC to Rung at 0" Command="{Binding AddXICInstructionCommand}" />
             </ToolBar>
         </ToolBarTray>
         <Grid Name="TestGridName">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
+                <RowDefinition Height="5" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="5" />
             </Grid.RowDefinitions>
-            <TextBlock Text="{Binding LoadedProgram}" />
-            <StackPanel Orientation="Vertical" CanVerticallyScroll="True">
-                
-            </StackPanel>
+            
+            <TextBlock Text="{Binding LoadedProgram.TestProp}" Grid.Row="1" Grid.Column="1"/>
+
+            <TreeView ItemsSource="{Binding LoadedProgram.Routines}"
+                      ItemTemplate="{StaticResource RoutineTreeViewItemTemplate}"
+                      Grid.Row="3" Grid.Column="1">
+            </TreeView>
+            
             <ListView ItemsSource="{Binding TestRung.GridFormatInstructionList}"
                       ItemTemplate="{StaticResource XICTemplate}"
                       ItemsPanel="{StaticResource RungPanelTemplate}"
                       ItemContainerStyle="{StaticResource RungItemContainerStyle}"
-                      Grid.Column="1" Grid.Row="1"/>
+                      Grid.Column="2" Grid.Row="3"/>
         </Grid>
     </DockPanel>
 </Window>

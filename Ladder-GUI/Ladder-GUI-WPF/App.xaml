@@ -8,6 +8,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Views/Rung Views/RungTemplates.xaml" />
                 <ResourceDictionary Source="Views/Instruction Views/InstructionDataTemplates.xaml" />
+                <ResourceDictionary Source="Views/Program Views/ProgramTemplates.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

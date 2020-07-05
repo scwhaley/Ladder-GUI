@@ -53,7 +53,7 @@ namespace Ladder_GUI_WPF.Views.Rung_Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Ladder-GUI-WPF;V1.0.0.0;component/views/rung%20views/rungview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Ladder-GUI-WPF;component/views/rung%20views/rungview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Rung Views\RungView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

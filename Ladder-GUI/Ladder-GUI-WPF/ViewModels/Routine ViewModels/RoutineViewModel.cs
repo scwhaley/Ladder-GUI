@@ -2,7 +2,7 @@
 {
     class RoutineViewModel : BaseRoutineViewModel
     {
-        #region Constructo
+        #region Constructor
         public RoutineViewModel(IRoutineModel routineModel) : base(routineModel)
         {
         }

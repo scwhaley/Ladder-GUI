@@ -66,15 +66,15 @@ namespace Ladder_GUI_WPF
         public LadderGUIViewModel()
         {
             BackgroundColor = "LightBlue";
-            this.LoadProgramCommand = new RelayCommand(LoadProgram);
-            LoadedProgram = new ProgramViewModel();
+            LoadedProgram = new ProgramViewModel("Program 1");
             TestRung = new RungViewModel();
+            this.LoadProgramCommand = new RelayCommand(LoadProgram);
             this.AddXICInstructionCommand = new RelayCommand(AddXICInstruction);
         }
 
         private void CreateNewProgram()
         {
-            LoadedProgram = new ProgramViewModel();
+            LoadedProgram = new ProgramViewModel("Test Name");
         }
 
         private void LoadProgram()

@@ -28,5 +28,10 @@ namespace Ladder_GUI_WPF
             File.AppendAllText(@"C:\Temp\Debug.txt", $"Showed GUI {Environment.NewLine}");
 
         }
+
+        private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
+        }
     }
 }
