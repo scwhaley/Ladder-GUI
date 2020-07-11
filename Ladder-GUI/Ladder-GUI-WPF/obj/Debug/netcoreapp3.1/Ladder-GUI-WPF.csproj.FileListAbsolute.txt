@@ -13,7 +13,6 @@ C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.g.resources
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.AssemblyInfoInputs.cache
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.AssemblyInfo.cs
-C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.csproj.CoreCompileInputs.cache
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.dll
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.pdb
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.genruntimeconfig.cache

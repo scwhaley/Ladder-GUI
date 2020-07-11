@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ladder_GUI_WPF" xmlns:Control="clr-namespace:Ladder_GUI_WPF.Views"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         Title="Ladder GUI" Height="800" Width="1400" WindowStartupLocation="CenterScreen">
     
@@ -34,8 +35,14 @@
             <TextBlock Text="{Binding LoadedProgram.TestProp}" Grid.Row="1" Grid.Column="1"/>
 
             <TreeView ItemsSource="{Binding LoadedProgram.Routines}"
+                      
                       ItemTemplate="{StaticResource RoutineTreeViewItemTemplate}"
                       Grid.Row="3" Grid.Column="1">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="">
+                        <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </TreeView>
             
             <ListView ItemsSource="{Binding TestRung.GridFormatInstructionList}"
