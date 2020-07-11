@@ -60,8 +60,6 @@ namespace Ladder_GUI_WPF
         {
             RungModel = new RungModel();
             GridFormatInstructionList = new ObservableCollection<BaseInstructionViewModel>();
-
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} - Created new RungViewModel {Environment.NewLine}");
         }
         #endregion Constructor
 
@@ -69,7 +67,6 @@ namespace Ladder_GUI_WPF
         // Adds an instruction to the rung models linked list of instructions
         public void addInstruction(int index, IBaseInstructionModel instruction)
         {
-            File.AppendAllText(@"C:\Temp\Debug.txt", $"{DateTime.Now.ToString("HH:mm:ss")} -In AddInstruction method {Environment.NewLine}");
             RungModel.LinkedListOfInstructions.InsertInstruction(instruction, index);
         }
 

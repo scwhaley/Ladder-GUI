@@ -32,7 +32,6 @@ namespace Ladder_GUI_WPF
             }
         }
 
-
         private string _backgroundColor;
         public string BackgroundColor
         {
@@ -68,8 +67,8 @@ namespace Ladder_GUI_WPF
             BackgroundColor = "LightBlue";
             LoadedProgram = new ProgramViewModel("Program 1");
             TestRung = new RungViewModel();
-            this.LoadProgramCommand = new RelayCommand(LoadProgram);
-            this.AddXICInstructionCommand = new RelayCommand(AddXICInstruction);
+            this.LoadProgramCommand = new RelayCommand<object>(LoadProgram);
+            this.AddXICInstructionCommand = new RelayCommand<object>(AddXICInstruction);
         }
 
         private void CreateNewProgram()
@@ -77,7 +76,7 @@ namespace Ladder_GUI_WPF
             LoadedProgram = new ProgramViewModel("Test Name");
         }
 
-        private void LoadProgram()
+        private void LoadProgram(object obj)
         {
             if (BackgroundColor == "LightBlue")
                 BackgroundColor = "LightGreen";
@@ -85,7 +84,7 @@ namespace Ladder_GUI_WPF
                 BackgroundColor = "LightBlue";
         }
 
-        private void AddXICInstruction()
+        private void AddXICInstruction(object obj)
         {
             TestRung.addInstruction(0, new XICInstructionModel());
             TestRung.CreateGridFormatRung();

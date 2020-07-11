@@ -7,14 +7,14 @@ using System.Windows.Input;
 // It acts as a wrapper.
 namespace Ladder_GUI_WPF
 {
-    class RelayCommand : ICommand
+    class RelayCommand<T> : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
-        private Action _action;
+        private Action<T> _action;
 
-        // Set the action
-        public RelayCommand(Action action)
+        // Create new relay command for methods with no parameters
+        public RelayCommand(Action<T> action)
         {
             _action = action;
         }
@@ -27,8 +27,8 @@ namespace Ladder_GUI_WPF
 
         // Runs the action
         public void Execute(object parameter)
-        {
-            _action();
+        { 
+            _action((T)parameter);
         }   
     }
 }

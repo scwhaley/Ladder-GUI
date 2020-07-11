@@ -25,3 +25,7 @@ C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\Rung Views\RungTemplates.baml
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\Rung Views\RungView.baml
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Views\Program Views\ProgramTemplates.baml
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\bin\Debug\netcoreapp3.1\Microsoft.Expression.Interactions.dll
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\bin\Debug\netcoreapp3.1\System.Windows.Interactivity.dll
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.csproj.CoreCompileInputs.cache
+C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\obj\Debug\netcoreapp3.1\Ladder-GUI-WPF.csproj.CopyComplete

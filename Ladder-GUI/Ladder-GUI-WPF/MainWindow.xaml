@@ -32,15 +32,15 @@
                 <RowDefinition Height="5" />
             </Grid.RowDefinitions>
             
-            <TextBlock Text="{Binding LoadedProgram.TestProp}" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock Text="{Binding LoadedProgram.LoadedRoutine.Name}" Grid.Row="1" Grid.Column="1"/>
 
-            <TreeView ItemsSource="{Binding LoadedProgram.Routines}"
-                      
+            <TreeView Name="ProjectTree"
+                      ItemsSource="{Binding LoadedProgram.Routines}"
                       ItemTemplate="{StaticResource RoutineTreeViewItemTemplate}"
                       Grid.Row="3" Grid.Column="1">
                 <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="">
-                        <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}"/>
+                    <i:EventTrigger EventName="SelectedItemChanged">
+                        <i:InvokeCommandAction Command="{Binding LoadedProgram.SelectedRoutineChangedCommand}" CommandParameter="{Binding ElementName=ProjectTree, Path=SelectedItem}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </TreeView>

@@ -53,7 +53,7 @@ namespace Ladder_GUI_WPF.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Ladder-GUI-WPF;V1.0.0.0;component/views/instruction%20views/xicview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Ladder-GUI-WPF;component/views/instruction%20views/xicview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Instruction Views\XICView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -15,6 +15,7 @@ namespace Ladder_GUI_WPF
     {
         #region Commands
         public ICommand AddRoutineCommand { get; set; }
+        public ICommand SelectedRoutineChangedCommand { get; set; }
         #endregion Commands
 
         #region Properties
@@ -98,12 +99,13 @@ namespace Ladder_GUI_WPF
         {
             ProgramModel = new ProgramModel(programName);
             Routines = new ObservableCollection<BaseRoutineViewModel>();
-            this.AddRoutineCommand = new RelayCommand(AddRoutine);
+            this.AddRoutineCommand = new RelayCommand<object>(AddRoutine);
+            this.SelectedRoutineChangedCommand = new RelayCommand<object>(SelectedRoutineChanged);
         }
         #endregion Constructors
 
         #region Methods
-        private void AddRoutine()
+        private void AddRoutine(object obj)
         {
             Random rand = new Random();
             string name = rand.Next().ToString();
@@ -130,10 +132,10 @@ namespace Ladder_GUI_WPF
             }
         }
 
-        public void OnRoutineSelected(object sender, EventArgs e)
+        public void SelectedRoutineChanged(object obj)
         {
-            var item = sender as TreeViewItem;
-            TestProp = item.Header.ToString();
+            var routine = obj as BaseRoutineViewModel;
+            LoadedRoutine = routine;
         }
         #endregion Methods
     }
