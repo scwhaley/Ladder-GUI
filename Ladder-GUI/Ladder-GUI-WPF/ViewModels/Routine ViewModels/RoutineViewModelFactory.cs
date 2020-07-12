@@ -14,10 +14,10 @@ namespace Ladder_GUI_WPF.ViewModels.Routine_ViewModels
         /// </summary>
         /// <param name="routineModel">The routine model to create a routine viewmodel from.</param>
         /// <returns>A routine viewmodel.</returns>
-        public RoutineViewModel CreateRoutineViewModel(IRoutineModel routineModel)
+        public LadderRoutineViewModel CreateRoutineViewModel(IRoutineModel routineModel)
         {
             if(routineModel is LadderRoutineModel)
-                return new RoutineViewModel(routineModel);
+                return new LadderRoutineViewModel(routineModel);
             
             // If the instruction type did not exist, throw argument exception
             throw new ArgumentException($"The {routineModel.Type} routine is not in the {nameof(RoutineViewModelFactory)} factory");

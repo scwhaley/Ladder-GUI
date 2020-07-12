@@ -94,7 +94,7 @@ namespace Ladder_GUI_WPF
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="programModel">The model to create the view model from.</param>
+        /// <param name="programName">The name of the program to create.</param>
         public ProgramViewModel(string programName)
         {
             ProgramModel = new ProgramModel(programName);

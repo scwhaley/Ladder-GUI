@@ -45,6 +45,7 @@
                 </i:Interaction.Triggers>
             </TreeView>
             
+            <ListView ItemsSource="{Binding LoadedProgram.SelectedRoutine.RungList}"
             <ListView ItemsSource="{Binding TestRung.GridFormatInstructionList}"
                       ItemTemplate="{StaticResource XICTemplate}"
                       ItemsPanel="{StaticResource RungPanelTemplate}"

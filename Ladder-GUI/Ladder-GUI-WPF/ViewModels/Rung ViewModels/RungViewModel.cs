@@ -61,6 +61,12 @@ namespace Ladder_GUI_WPF
             RungModel = new RungModel();
             GridFormatInstructionList = new ObservableCollection<BaseInstructionViewModel>();
         }
+
+        public RungViewModel(RungModel model)
+        {
+            RungModel = model;
+            GridFormatInstructionList = new ObservableCollection<BaseInstructionViewModel>();
+        }
         #endregion Constructor
 
         #region Methods
