@@ -13,8 +13,7 @@ namespace Ladder_GUI_WPF
     class LadderGUIViewModel : BaseViewModel
     {
         #region Commands
-        public ICommand LoadProgramCommand { get; set; }
-        public ICommand AddXICInstructionCommand { get; set; }
+        public ICommand ToggleBackgroundCommand { get; set; }
 
         #endregion Commands
         #region Properties
@@ -67,8 +66,7 @@ namespace Ladder_GUI_WPF
             BackgroundColor = "LightBlue";
             LoadedProgram = new ProgramViewModel("Program 1");
             TestRung = new RungViewModel();
-            this.LoadProgramCommand = new RelayCommand<object>(LoadProgram);
-            this.AddXICInstructionCommand = new RelayCommand<object>(AddXICInstruction);
+            this.ToggleBackgroundCommand = new RelayCommand<object>(ToggleBackground);
         }
 
         private void CreateNewProgram()
@@ -76,7 +74,7 @@ namespace Ladder_GUI_WPF
             LoadedProgram = new ProgramViewModel("Test Name");
         }
 
-        private void LoadProgram(object obj)
+        private void ToggleBackground(object obj)
         {
             if (BackgroundColor == "LightBlue")
                 BackgroundColor = "LightGreen";
@@ -84,10 +82,5 @@ namespace Ladder_GUI_WPF
                 BackgroundColor = "LightBlue";
         }
 
-        private void AddXICInstruction(object obj)
-        {
-            TestRung.addInstruction(0, new XICInstructionModel());
-            TestRung.CreateGridFormatRung();
-        }
     }
 }

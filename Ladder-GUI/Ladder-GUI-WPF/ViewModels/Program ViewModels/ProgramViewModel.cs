@@ -1,5 +1,4 @@
-﻿using Ladder_GUI_WPF.ViewModels.Routine_ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -46,8 +45,8 @@ namespace Ladder_GUI_WPF
             }
         }
 
-        private ObservableCollection<BaseRoutineViewModel> _routines;
-        public ObservableCollection<BaseRoutineViewModel> Routines
+        private ObservableCollection<LadderRoutineViewModel> _routines;
+        public ObservableCollection<LadderRoutineViewModel> Routines
         {
             get => _routines;
             set
@@ -60,8 +59,8 @@ namespace Ladder_GUI_WPF
             }
         }
 
-        private BaseRoutineViewModel _loadedRoutine;
-        public BaseRoutineViewModel LoadedRoutine
+        private LadderRoutineViewModel _loadedRoutine;
+        public LadderRoutineViewModel LoadedRoutine
         {
             get { return _loadedRoutine; }
             set 
@@ -98,7 +97,7 @@ namespace Ladder_GUI_WPF
         public ProgramViewModel(string programName)
         {
             ProgramModel = new ProgramModel(programName);
-            Routines = new ObservableCollection<BaseRoutineViewModel>();
+            Routines = new ObservableCollection<LadderRoutineViewModel>();
             this.AddRoutineCommand = new RelayCommand<object>(AddRoutine);
             this.SelectedRoutineChangedCommand = new RelayCommand<object>(SelectedRoutineChanged);
         }
@@ -113,9 +112,11 @@ namespace Ladder_GUI_WPF
             this.UpdateRoutineViewModels();
         }
 
-        public void DeleteRoutine(int index)
+        public void DeleteRoutine(object obj)
         {
-            _programModel.RoutineList.RemoveAt(index);
+            var routine = obj as LadderRoutineViewModel;
+            _programModel.RoutineList.Remove(routine);
+            this.UpdateRoutineViewModels();
         }
 
         /// <summary>
@@ -124,17 +125,16 @@ namespace Ladder_GUI_WPF
         private void UpdateRoutineViewModels()
         {
             Routines.Clear();
-            RoutineViewModelFactory factory = new RoutineViewModelFactory();
             foreach (var routineModel in _programModel.RoutineList)
             {
-                BaseRoutineViewModel routineViewModel = factory.CreateRoutineViewModel(routineModel);
+                LadderRoutineViewModel routineViewModel = new LadderRoutineViewModel(routineModel);
                 Routines.Add(routineViewModel);
             }
         }
 
         public void SelectedRoutineChanged(object obj)
         {
-            var routine = obj as BaseRoutineViewModel;
+            var routine = obj as LadderRoutineViewModel;
             LoadedRoutine = routine;
         }
         #endregion Methods

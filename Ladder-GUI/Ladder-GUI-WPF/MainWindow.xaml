@@ -11,9 +11,10 @@
     <DockPanel Background="{Binding BackgroundColor}">
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button Content="Toggle Background" Command="{Binding LoadProgramCommand}" />
+                <Button Content="Toggle Background" Command="{Binding ToggleBackgroundCommand}" />
                 <Button Content="Add Routine" Command="{Binding LoadedProgram.AddRoutineCommand}" />
-                <Button Content="Add XIC to Rung at 0" Command="{Binding AddXICInstructionCommand}" />
+                <Button Content="Add Rung" Command="{Binding LoadedProgram.SelectedRoutine.AddRungCommand}" />
+                <Button Content="Add XIC to Rung at 0" Command="{Binding LoadedProgram.LoadedRoutine.SelectedRung.AddXICCommand}" />
             </ToolBar>
         </ToolBarTray>
         <Grid Name="TestGridName">
@@ -31,26 +32,37 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="5" />
             </Grid.RowDefinitions>
-            
+
             <TextBlock Text="{Binding LoadedProgram.LoadedRoutine.Name}" Grid.Row="1" Grid.Column="1"/>
 
             <TreeView Name="ProjectTree"
                       ItemsSource="{Binding LoadedProgram.Routines}"
                       ItemTemplate="{StaticResource RoutineTreeViewItemTemplate}"
-                      Grid.Row="3" Grid.Column="1">
+                      Grid.Row="3" 
+                      Grid.Column="1">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectedItemChanged">
                         <i:InvokeCommandAction Command="{Binding LoadedProgram.SelectedRoutineChangedCommand}" CommandParameter="{Binding ElementName=ProjectTree, Path=SelectedItem}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </TreeView>
-            
-            <ListView ItemsSource="{Binding LoadedProgram.SelectedRoutine.RungList}"
-            <ListView ItemsSource="{Binding TestRung.GridFormatInstructionList}"
+            <ListView ItemsSource="{Binding LoadedProgram.SelectedRoutine.RungVMList}"
+                      Grid.Column="2" Grid.Row="3">
+                    
+            </ListView>
+            <!--<ListView ItemsSource="{Binding LoadedProgram.SelectedRoutine.SelectedRung.GridFormatInstructionList}"
                       ItemTemplate="{StaticResource XICTemplate}"
                       ItemsPanel="{StaticResource RungPanelTemplate}"
                       ItemContainerStyle="{StaticResource RungItemContainerStyle}"
-                      Grid.Column="2" Grid.Row="3"/>
+                      
+                      SelectedItem="{Binding LoadedProgram.LoadedRoutine.SelectedRung}">
+            </ListView>-->
+
+                <!--<ListView ItemsSource="{Binding TestRung.GridFormatInstructionList}"
+                      ItemTemplate="{StaticResource XICTemplate}"
+                      ItemsPanel="{StaticResource RungPanelTemplate}"
+                      ItemContainerStyle="{StaticResource RungItemContainerStyle}"
+                      Grid.Column="2" Grid.Row="3"/>-->
         </Grid>
     </DockPanel>
 </Window>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ladder_GUI_WPF
 {
-    class RungModel : IRungModel
+    class RungModel
     {
         public bool Enabled { get; set; }
         public RungInstructionsLinkedList LinkedListOfInstructions { get; set; }

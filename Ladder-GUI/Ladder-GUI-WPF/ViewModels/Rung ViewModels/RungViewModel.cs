@@ -8,18 +8,20 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Input;
 
 namespace Ladder_GUI_WPF
 {
     class RungViewModel : BaseViewModel
     {
         #region Commands
+        public ICommand AddXICCommand { get; set; }
 
         #endregion Commands
 
         #region Properties
-        private IRungModel _rungModel;
-        public IRungModel RungModel { get => _rungModel;
+        private RungModel _rungModel;
+        public RungModel RungModel { get => _rungModel;
             set
             {
                 if (_rungModel == value)
@@ -60,6 +62,7 @@ namespace Ladder_GUI_WPF
         {
             RungModel = new RungModel();
             GridFormatInstructionList = new ObservableCollection<BaseInstructionViewModel>();
+            AddXICCommand = new RelayCommand<object>(AddXICInstruction);
         }
 
         public RungViewModel(RungModel model)
@@ -70,8 +73,14 @@ namespace Ladder_GUI_WPF
         #endregion Constructor
 
         #region Methods
+        private void AddXICInstruction(object obj)
+        {
+            AddInstruction(0, new XICInstructionModel());
+            CreateGridFormatRung();
+        }
+
         // Adds an instruction to the rung models linked list of instructions
-        public void addInstruction(int index, IBaseInstructionModel instruction)
+        public void AddInstruction(int index, IBaseInstructionModel instruction)
         {
             RungModel.LinkedListOfInstructions.InsertInstruction(instruction, index);
         }

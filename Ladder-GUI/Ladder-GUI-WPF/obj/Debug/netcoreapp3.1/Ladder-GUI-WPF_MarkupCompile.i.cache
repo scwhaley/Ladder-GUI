@@ -1,5 +1,5 @@
 ﻿Ladder-GUI-WPF
-
+1.0.0.0
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\Spencer\source\repos\scwhaley\Ladder-GUI\Ladder-GUI\Ladder-GUI-WPF\App.xaml
 61293473839
 
-29867846240
+311226191754
 1941086721762
 MainWindow.xaml;Views\Instruction Views\InstructionDataTemplates.xaml;Views\Instruction Views\XICView.xaml;Views\Program Views\ProgramTemplates.xaml;Views\Rung Views\RungTemplates.xaml;Views\Rung Views\RungView.xaml;
 
